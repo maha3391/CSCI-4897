@@ -53,8 +53,17 @@ plt.plot(T, R, label='Recovered', color='green')
 plt.plot(T, N, label='Total Population', color='black', linestyle='--')
 plt.xlabel('Time')
 plt.ylabel('Population')
-plt.title('SIR Model with Population Growth - Malia Hayes')
-plt.legend()
+plt.title('SIR  Model with Population Growth by 50% - Malia Hayes')
+
+# Add horizontal dotted line at population = 1500
+plt.axhline(y=1500, color='gray', linestyle=':', label='Population = 1500')
+# Find where N crosses 1500
+cross_idx = np.where(N >= 1500)[0][0]
+cross_time = T[cross_idx]
+# Add vertical dotted line at crossing time
+plt.axvline(x=cross_time, color='purple', linestyle=':', label=f'Time at N=1500 ({cross_time:.2f})')
+
+plt.legend(fontsize=8)
 plt.grid(True)
 plt.show()
 
