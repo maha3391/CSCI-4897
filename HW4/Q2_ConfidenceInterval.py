@@ -8,4 +8,8 @@ def corrected_prevalence_CI(x, n, Se, Sp, alpha=0.05):
                (ci_high + Sp - 1)/(Se + Sp - 1)]
     return p_corr, ci_corr
 
-print(corrected_prevalence_CI(39, 100, 0.9, 0.98))
+print(corrected_prevalence_CI(39, 100, 0.9, 0.98)) #Maria
+
+print(corrected_prevalence_CI(18, 50, 0.9, 0.98)) #Burt
+
+print(corrected_prevalence_CI(57, 150, 0.9, 0.98)) #Maria+Burt
